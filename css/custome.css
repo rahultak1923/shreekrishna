@@ -1,6 +1,10 @@
+
+ @media (min-width:780px) {
 .carousel-height{
   height: 700px;
  }
 .img-ra{
   height: 700px;
+ }
+
  }
