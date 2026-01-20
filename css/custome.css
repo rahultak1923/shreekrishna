@@ -1,3 +1,6 @@
+#bhajan {
+  background-color: #9c2f05; /* dark brown */
+}
 
  @media (min-width:780px) {
 .carousel-height{
@@ -8,3 +11,27 @@
  }
 
  }
+    @media (max-width:779px) {
+.display-mobile-none{
+    display:none;
+}
+    }
+
+
+
+
+ .carousel-container { overflow: hidden; position: relative; }
+.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+.card { flex: 0 0 50%; margin: 0 10px; } /* Desktop: 2 cards */
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); border: none; color: #fff;
+  font-size: 24px; padding: 10px; cursor: pointer; z-index: 10;
+}
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* Mobile: show only 1 card */
+@media(max-width: 768px){
+  .card { flex: 0 0 100%; }
+}
