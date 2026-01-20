@@ -843,9 +843,9 @@ border-right:none;
 
 .navbar .navbar-toggler{
 box-shadow:none!important;
-background:#fafafa;
+background:beige;
 border:none;
-border-radius:0;
+border-radius:10px;
 margin-top:0;
  }
 #header .drop_1{
