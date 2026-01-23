@@ -43,6 +43,7 @@
 /* Mobile: show only 1 card */
 @media(max-width: 768px){
   .card { flex: 0 0 100%; }
+    .card1 { flex: 0 0 100%; }
 }
 
 
