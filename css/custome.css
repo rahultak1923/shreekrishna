@@ -340,3 +340,37 @@ body{
     height: 100%;
     border: 0;
 }
+
+
+
+.underline-r { width: 80px; height: 3px; background: #FF8C00; margin: 10px auto; }
+.btn-r { border: 1px solid #ddd; background: #fdf2e9; border-radius: 50px; padding: 8px 25px; cursor: pointer; }
+.active-r { background: #FF8C00 !important; color: white !important; }
+
+.slider-container-r { position: relative; overflow: hidden; padding: 0 0px; }
+.slider-track-r { display: flex; width: 100%; }
+
+.slider-wrapper-r { 
+    display: none; /* Default hide all */
+    transition: transform 0.5s ease-in-out; 
+    gap: 20px; width: 100%;
+}
+.active-wrapper-r { display: flex; }
+
+.card-r { 
+    min-width: calc(33.33% - 14px); flex-shrink: 0;
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card-r img { width: 100%; height: 260px; object-fit: cover; }
+.card-text-r { padding: 15px; text-align: center; font-weight: bold; }
+
+.nav-btn-r { 
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: white; border: 1px solid #ddd; border-radius: 50%;
+    width: 45px; height: 45px; cursor: pointer; z-index: 100; color: #FF8C00;
+}
+.prev-r { left: 0; }
+.next-r { right: 0; }
+
+@media (max-width: 768px) { .card-r { min-width: 100%; } }

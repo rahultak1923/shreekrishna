@@ -775,6 +775,133 @@ window.addEventListener('resize', () => {
     </div>
 </div>
 
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">गैलरी – भक्ति और स्मृतियों की झलक</h2>
+        <div class="underline-r"></div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+        <button class="btn-r active-r" onclick="switchTabR('patotsav', this)">पाटोत्सव</button>
+        <button class="btn-r" onclick="switchTabR('camp', this)">रक्तदान शिविर</button>
+        <button class="btn-r" onclick="switchTabR('katha', this)">श्री राम कथा</button>
+    </div>
+
+    <div class="slider-container-r">
+        <button class="nav-btn-r prev-r" id="prevBtn-r" type="button">&#10094;</button>
+        
+        <div class="slider-track-r" id="slider-track-r">
+            
+           <div class="slider-wrapper-r active-wrapper-r" id="patotsav">
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500"><div class="card-text-r">पाटोत्सव १</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500"><div class="card-text-r">पाटोत्सव २</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500"><div class="card-text-r">पाटोत्सव ३</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500"><div class="card-text-r">पाटोत्सव ४</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500"><div class="card-text-r">पाटोत्सव ५</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1545013149-1698263919da?w=500"><div class="card-text-r">पाटोत्सव १</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1609137233842-88f289947963?w=500"><div class="card-text-r">पाटोत्सव २</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500"><div class="card-text-r">पाटोत्सव ३</div></div>
+            </div>
+
+            <div class="slider-wrapper-r" id="camp">
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1615461066841-6116ecaabb04?w=500"><div class="card-text-r">शिविर १</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500"><div class="card-text-r">शिविर २</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500"><div class="card-text-r">शिविर ३</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1559839734-2b71f153678c?w=500"><div class="card-text-r">शिविर ४</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1517646280104-a68da1ed79e1?w=500"><div class="card-text-r">शिविर ५</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1615461066841-6116ecaabb04?w=500"><div class="card-text-r">शिविर १</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500"><div class="card-text-r">शिविर २</div></div>
+                <div class="card-r"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500"><div class="card-text-r">शिविर ३</div></div>
+            </div>
+            <div class="slider-wrapper-r" id="katha">
+                <div class="card-r"><img src="k1.jpg"><div class="card-text-r">कथा १</div></div>
+                <div class="card-r"><img src="k2.jpg"><div class="card-text-r">कथा २</div></div>
+                <div class="card-r"><img src="k3.jpg"><div class="card-text-r">कथा ३</div></div>
+                <div class="card-r"><img src="k4.jpg"><div class="card-text-r">कथा ४</div></div>
+                <div class="card-r"><img src="k5.jpg"><div class="card-text-r">कथा ५</div></div>
+                <div class="card-r clone-r"><img src="k1.jpg"><div class="card-text-r">कथा १</div></div>
+                <div class="card-r clone-r"><img src="k2.jpg"><div class="card-text-r">कथा २</div></div>
+                <div class="card-r clone-r"><img src="k3.jpg"><div class="card-text-r">कथा ३</div></div>
+            </div>
+
+        </div>
+
+        <button class="nav-btn-r next-r" id="nextBtn-r" type="button">&#10095;</button>
+    </div>
+</div>
+<script>
+let currentIndex = 0;
+let autoTimer;
+const totalOriginalCards = 5; // Aapki asli images count
+
+function getActiveWrapper() {
+    return document.querySelector('.active-wrapper-r');
+}
+
+function slideR(animate = true) {
+    const wrapper = getActiveWrapper();
+    const card = wrapper.querySelector('.card-r');
+    const step = card.offsetWidth + 20; // Width + Gap
+
+    wrapper.style.transition = animate ? "transform 0.5s ease-in-out" : "none";
+    wrapper.style.transform = `translateX(${-currentIndex * step}px)`;
+
+    // "Right-to-Right" Infinite Logic
+    if (currentIndex >= totalOriginalCards) {
+        setTimeout(() => {
+            currentIndex = 0;
+            slideR(false); // Bina jhatke ke wapas 1st par
+        }, 500);
+    }
+}
+
+function nextR() {
+    currentIndex++;
+    slideR(true);
+}
+
+function prevR() {
+    if (currentIndex <= 0) {
+        currentIndex = totalOriginalCards;
+        slideR(false);
+        setTimeout(() => { currentIndex--; slideR(true); }, 10);
+    } else {
+        currentIndex--;
+        slideR(true);
+    }
+}
+
+function switchTabR(tabId, btn) {
+    // 1. Buttons update
+    document.querySelectorAll('.btn-r').forEach(b => b.classList.remove('active-r'));
+    btn.classList.add('active-r');
+
+    // 2. Wrappers update
+    document.querySelectorAll('.slider-wrapper-r').forEach(w => {
+        w.classList.remove('active-wrapper-r');
+        w.style.transform = `translateX(0px)`; // Reset position
+    });
+    const newWrapper = document.getElementById(tabId);
+    newWrapper.classList.add('active-wrapper-r');
+
+    // 3. Reset Timer & Index
+    currentIndex = 0;
+    clearInterval(autoTimer);
+    startAutoR();
+}
+
+function startAutoR() {
+    autoTimer = setInterval(nextR, 3000);
+}
+
+// Events
+document.getElementById('nextBtn-r').addEventListener('click', () => { nextR(); clearInterval(autoTimer); startAutoR(); });
+document.getElementById('prevBtn-r').addEventListener('click', () => { prevR(); clearInterval(autoTimer); startAutoR(); });
+
+// Start
+startAutoR();
+</script>
+
 
 	<section id="bhajan" class=" ">
   <div class="container-xl ">
