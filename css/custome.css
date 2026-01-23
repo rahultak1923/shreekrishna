@@ -30,6 +30,8 @@
  .carousel-container { overflow: hidden; position: relative; }
 .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
 .card { flex: 0 0 50%; margin: 0 10px; } /* Desktop: 2 cards */
+.card1 { flex: 0 0 calc(100% / 3);
+  margin: 0 10px; } /* Desktop: 3 cards */
 .carousel-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
   background: rgba(0,0,0,0.5); border: none; color: #fff;
@@ -374,3 +376,29 @@ body{
 .next-r { right: 0; }
 
 @media (max-width: 768px) { .card-r { min-width: 100%; } }
+
+
+
+
+
+
+/* history css */
+
+.section-line-his {
+      width: 120px;
+      height: 3px;
+      background: #ff6a00;
+      margin: 10px auto 20px;
+    }
+
+    .temple-img-his {
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 50%;
+    }
+
+    .divider-his {
+      height: 3px;
+      background: #ff6a00;
+      margin: 60px 0;
+    }
