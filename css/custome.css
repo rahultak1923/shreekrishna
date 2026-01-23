@@ -163,7 +163,7 @@ body{
         .donation-image{
             position:relative;
             height:100%;
-            min-height:350px;
+            /* min-height:350px; */
             background:url('temple.jpg') center/cover no-repeat;
         }
         .donation-image::after{
@@ -181,6 +181,14 @@ body{
             }
             .payment-icons{
                 justify-content:center;
+            }
+        }
+        @media(min-width:768px){
+            .padding-only-laptop{
+                padding-top: 125px !important;
+            }
+            .img-radio{
+                border-radius: 230px;
             }
         }
 
@@ -285,9 +293,9 @@ body{
     }
 
     /* Carousel */
-    .carousel-item{
+    /* .carousel-item{
         padding:10px 0;
-    }
+    } */
     .gallery-img{
         height:300px;
         object-fit:cover;
