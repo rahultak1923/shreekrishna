@@ -590,4 +590,11 @@ body {
 @media(max-width:768px){
     .row-r{ flex-direction:column; }
     .left-r,.right-r{ width:100%; }
+
+}
+@media(min-width:768px){
+  
+    .padding-laptop{
+        padding-bottom: 10rem;
+    }
 }

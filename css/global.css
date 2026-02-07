@@ -814,7 +814,7 @@ padding-top:19px;
 padding-top:20px;
  }
 .footer_m2{
-top:-19%; 
+top:-21%; 
  }
 
 #footer{
@@ -928,10 +928,10 @@ margin-bottom:8px;
 margin-top:8px;
 margin-bottom:8px; 
  }
-.footer_m2{
+/* .footer_m2{
 position:static!important;
 display:none; 
- }
+ } */
 .footer_m{
 margin-top:0; 
  }
