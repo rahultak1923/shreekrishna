@@ -598,3 +598,49 @@ body {
         padding-bottom: 10rem;
     }
 }
+
+
+/* aaojan  */
+
+.title-s-r {
+  color: #1c2d4f;
+}
+
+.underline-s-r {
+  width: 80px;
+  height: 3px;
+  background: #ff8c00;
+  margin-top: 8px;
+}
+
+.desc-s-r {
+  max-width: 800px;
+  margin: auto;
+  color: #555;
+}
+
+.event-card-s-r {
+  background: #fff4e6;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.event-card-s-r:hover {
+  transform: translateY(-6px);
+}
+
+.event-title-s-r {
+  color: #ff7a00;
+  font-weight: 700;
+}
+
+.event-text-s-r {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.event-desc-s-r {
+  color: #555;
+}
