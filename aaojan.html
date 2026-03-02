@@ -13,7 +13,7 @@
 
 	<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="fonts/css/fontawesome.min.css" rel="stylesheet">
-	<link href="fonts/css/brands.min.css" rel="stylesheet" />
+	<!-- <link href="fonts/css/brands.min.css" rel="stylesheet" /> -->
 	<link href="fonts/css/solid.min.css" rel="stylesheet" />
 	<link href="css/global.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
 		crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+	<!-- <script src="js/bootstrap.bundle.min.js"></script> -->
 	<link rel="stylesheet" href="css/custome.css">
 
 </head>
@@ -153,123 +153,94 @@
 			</p>
 		</div>
 
-		<!-- Cards -->
-		<div class="row g-4">
+	<div class="container py-5">
+    <h2 class="text-center fw-bold mb-5">Temple Programs</h2>
 
-			<!-- Card 1 -->
-			<div class="col-lg-4 col-md-6">
-				<div class="event-card-s-r h-100">
-					<img src="img/temple1.jpeg" class="img-fluid rounded-top" alt="">
-					<div class="p-4 text-center">
-						<h5 class="event-title-s-r">श्री श्याम संकीर्तन महोत्सव</h5>
-						<!-- <p class="event-text-s-r">
-            <strong>स्थान:</strong> श्री श्याम मंदिर प्रांगण, सूरत<br>
-            <strong>दिनांक:</strong> 15 सितंबर 2025, शाम 6:00 बजे से
-          </p>
-          <p class="small event-desc-s-r">
-            एक भव्य संध्या जहाँ प्रसिद्ध भजन गायकों द्वारा श्री श्री राणी सती दादीजी मंदिर  के भजन प्रस्तुत किए जाएंगे।
-          </p> -->
-					</div>
-				</div>
-			</div>
+    <div class="row" id="programContainer">
+        <!-- Cards will come here dynamically -->
+    </div>
+</div>
 
-			<!-- Card 2 -->
-			<div class="col-lg-4 col-md-6">
-				<div class="event-card-s-r h-100">
-					<img src="img/temple2.jpeg" class="img-fluid rounded-top" alt="">
-					<div class="p-4 text-center">
-						<h5 class="event-title-s-r">जन्माष्टमी विशेष रात्रि जागरण</h5>
-						<!-- <p class="event-text-s-r">
-            <strong>स्थान:</strong> श्री श्याम मंदिर, सूरत<br>
-            <strong>दिनांक:</strong> 26 अगस्त 2025, रात 10:00 बजे से
-          </p>
-          <p class="small event-desc-s-r">
-            रात्रि जागरण, झांकी, कीर्तन एवं रात्रि 12 बजे श्रीकृष्ण जन्म आरती।
-          </p> -->
-					</div>
-				</div>
-			</div>
+<script>
 
-			<!-- Card 3 -->
-			<div class="col-lg-4 col-md-6">
-				<div class="event-card-s-r h-100">
-					<img src="img/temple1.jpeg" class="img-fluid rounded-top" alt="">
-					<div class="p-4 text-center">
-						<h5 class="event-title-s-r">रक्तदान शिविर</h5>
-						<!-- <p class="event-text-s-r">
-            <strong>स्थान:</strong> सेवा भवन<br>
-            <strong>समय:</strong> सुबह 9:00 बजे से दोपहर 2:00 बजे तक
-          </p>
-          <p class="small event-desc-s-r">
-            मानवता की सेवा में समर्पित – सभी श्रद्धालुओं से अधिक संख्या में भाग लेने का अनुरोध।
-          </p> -->
-					</div>
-				</div>
-			</div>
+const url = "https://opensheet.elk.sh/1LlllIgPV1vE5OR5jk2hfN0gwvgwYG8lfragEubsD9_4/Sheet1?raw=true";
 
-			<!-- Divider -->
-			<div class="divider-his"></div>
+fetch(url)
+.then(res => res.json())
+.then(data => {
 
-		</div>
+    const container = document.getElementById("programContainer");
+
+    data.forEach(row => {
+
+        const values = Object.values(row);
+
+        const image = values[0];
+        const heading = values[1];
+
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-4";
+
+        col.innerHTML = `
+            <div class="card shadow h-100">
+                <img src="${image}" class="card-img-top">
+                <div class="card-body text-center" style="background-color: #fff4e6;">
+                    <h5 class="event-title-s-r">${heading}</h5>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(col);
+    });
+
+})
+.catch(error => console.log(error));
+
+</script>
+
+
 	</section>
 
-	<section class="container ">
+	<!-- <section class="container ">
 
-		<!-- Heading -->
 
-		<!-- Cards -->
 		<div class="row g-4">
 
-			<!-- Card 1 -->
 
 			<div class="col-lg-4 col-md-6">
 				<div class="event-card-s-r h-100">
 					<img src="img/temple1.jpeg" class="img-fluid rounded-top" alt="">
 					<div class="p-4 text-center">
 						<h5 class="event-title-s-r">श्री श्याम संकीर्तन महोत्सव</h5>
-						<!-- <p class="event-text-s-r">
+						<p class="event-text-s-r">
             <strong>स्थान:</strong> श्री श्याम मंदिर प्रांगण, सूरत<br>
             <strong>दिनांक:</strong> 15 सितंबर 2025, शाम 6:00 बजे से
           </p>
           <p class="small event-desc-s-r">
             एक भव्य संध्या जहाँ प्रसिद्ध भजन गायकों द्वारा श्री श्री राणी सती दादीजी मंदिर  के भजन प्रस्तुत किए जाएंगे।
-          </p> -->
+          </p>
 					</div>
 				</div>
 			</div>
 
-			<!-- Card 2 -->
 
 			<div class="col-lg-4 col-md-6">
 				<div class="event-card-s-r h-100">
 					<img src="img/temple2.jpeg" class="img-fluid rounded-top" alt="">
 					<div class="p-4 text-center">
 						<h5 class="event-title-s-r">जन्माष्टमी विशेष रात्रि जागरण</h5>
-						<!-- <p class="event-text-s-r">
-            <strong>स्थान:</strong> श्री श्याम मंदिर, सूरत<br>
-            <strong>दिनांक:</strong> 26 अगस्त 2025, रात 10:00 बजे से
-          </p>
-          <p class="small event-desc-s-r">
-            रात्रि जागरण, झांकी, कीर्तन एवं रात्रि 12 बजे श्रीकृष्ण जन्म आरती।
-          </p> -->
+						
 					</div>
 				</div>
 			</div>
 
-			<!-- Card 3 -->
 
 			<div class="col-lg-4 col-md-6">
 				<div class="event-card-s-r h-100">
 					<img src="img/temple1.jpeg" class="img-fluid rounded-top" alt="">
 					<div class="p-4 text-center">
 						<h5 class="event-title-s-r">रक्तदान शिविर</h5>
-						<!-- <p class="event-text-s-r">
-            <strong>स्थान:</strong> सेवा भवन<br>
-            <strong>समय:</strong> सुबह 9:00 बजे से दोपहर 2:00 बजे तक
-          </p>
-          <p class="small event-desc-s-r">
-            मानवता की सेवा में समर्पित – सभी श्रद्धालुओं से अधिक संख्या में भाग लेने का अनुरोध।
-          </p> -->
+						
 					</div>
 				</div>
 			</div>
@@ -277,12 +248,7 @@
 
 
 		</div>
-	</section>
-
-
-
-
-
+	</section> -->
 
 
 	<!-- Divider -->
