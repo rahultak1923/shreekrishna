@@ -153,7 +153,7 @@
 			</p>
 		</div>
 
-	<div class="container py-5">
+<div class="container py-5">
     <h2 class="text-center fw-bold mb-5">Temple Programs</h2>
 
     <div class="row" id="programContainer">
@@ -175,29 +175,39 @@ fetch(url)
 
         const values = Object.values(row);
 
-        const image = values[0];
+        let image = values[0];
         const heading = values[1];
+
+        // 🔥 Google Drive link detect karo
+        if(image.includes("drive.google.com/file/d/")){
+
+            // FILE_ID extract
+            const fileId = image.split("/d/")[1].split("/")[0];
+
+            // correct image URL
+            image = `https://drive.google.com/thumbnail?id=${fileId}&sz=s800`;
+        }
 
         const col = document.createElement("div");
         col.className = "col-md-4 mb-4";
 
         col.innerHTML = `
             <div class="card shadow h-100">
-                <img src="${image}" class="card-img-top" style="height: 16.5rem;">
-                <div class="card-body text-center" style="background-color: #fff4e6;">
+                <img src="${image}" class="card-img-top" style="height:16.5rem; object-fit:cover;">
+                <div class="card-body text-center" style="background-color:#fff4e6;">
                     <h5 class="event-title-s-r">${heading}</h5>
                 </div>
             </div>
         `;
 
         container.appendChild(col);
+
     });
 
 })
 .catch(error => console.log(error));
 
 </script>
-
 
 	</section>
 
