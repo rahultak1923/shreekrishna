@@ -87,10 +87,10 @@
 								</li> -->
 
 								<li class="nav-item">
-									<a class="nav-link" href="upcoming-events.html">सामाजिक कार्य</a>
+									<a class="nav-link" href="samajik-work.html">सामाजिक कार्य</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link active" href="aaojan.html">आयोजन</a>
+									<a class="nav-link active" href="upcomming-event.html">आयोजन</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link " href="bhajan.html">भजन संग्रह</a>
@@ -153,45 +153,45 @@
 			</p>
 		</div>
 
-<div class="container py-5">
-    <h2 class="text-center fw-bold mb-5">Temple Programs</h2>
+		<div class="container py-5">
+			<h2 class="text-center fw-bold mb-5">Temple Programs</h2>
 
-    <div class="row" id="programContainer">
-        <!-- Cards will come here dynamically -->
-    </div>
-</div>
+			<div class="row" id="programContainer">
+				<!-- Cards will come here dynamically -->
+			</div>
+		</div>
 
-<script>
+		<script>
 
-const url = "https://opensheet.elk.sh/1LlllIgPV1vE5OR5jk2hfN0gwvgwYG8lfragEubsD9_4/Sheet1?raw=true";
+			const url = "https://opensheet.elk.sh/1LlllIgPV1vE5OR5jk2hfN0gwvgwYG8lfragEubsD9_4/Sheet1?raw=true";
 
-fetch(url)
-.then(res => res.json())
-.then(data => {
+			fetch(url)
+				.then(res => res.json())
+				.then(data => {
 
-    const container = document.getElementById("programContainer");
+					const container = document.getElementById("programContainer");
 
-    data.forEach(row => {
+					data.forEach(row => {
 
-        const values = Object.values(row);
+						const values = Object.values(row);
 
-        let image = values[0];
-        const heading = values[1];
+						let image = values[0];
+						const heading = values[1];
 
-        // 🔥 Google Drive link detect karo
-        if(image.includes("drive.google.com/file/d/")){
+						// 🔥 Google Drive link detect karo
+						if (image.includes("drive.google.com/file/d/")) {
 
-            // FILE_ID extract
-            const fileId = image.split("/d/")[1].split("/")[0];
+							// FILE_ID extract
+							const fileId = image.split("/d/")[1].split("/")[0];
 
-            // correct image URL
-            image = `https://drive.google.com/thumbnail?id=${fileId}&sz=s800`;
-        }
+							// correct image URL
+							image = `https://drive.google.com/thumbnail?id=${fileId}&sz=s800`;
+						}
 
-        const col = document.createElement("div");
-        col.className = "col-md-4 mb-4";
+						const col = document.createElement("div");
+						col.className = "col-md-4 mb-4";
 
-        col.innerHTML = `
+						col.innerHTML = `
             <div class="card shadow h-100">
                 <img src="${image}" class="card-img-top" style="height:16.5rem; object-fit:cover;">
                 <div class="card-body text-center" style="background-color:#fff4e6;">
@@ -200,14 +200,14 @@ fetch(url)
             </div>
         `;
 
-        container.appendChild(col);
+						container.appendChild(col);
 
-    });
+					});
 
-})
-.catch(error => console.log(error));
+				})
+				.catch(error => console.log(error));
 
-</script>
+		</script>
 
 	</section>
 
@@ -394,10 +394,10 @@ fetch(url)
 								<div class="row footer_3ism">
 									<h6 class="col-md-12 col-6"><i
 											class="fa fa-chevron-right col_oran me-1 font_13 align-middle"></i> <a
-											class="text-light a_tag" href="upcoming-events.html"> सामाजिक कार्य</a></h6>
+											class="text-light a_tag" href="samajik-work.html"> सामाजिक कार्य</a></h6>
 									<h6 class="col-md-12 col-6 mt-2"><i
 											class="fa fa-chevron-right col_oran me-1 font_13 align-middle"></i> <a
-											class="text-light a_tag " href="aaojan.html">आयोजन</a></h6>
+											class="text-light a_tag " href="upcomming-event.html">आयोजन</a></h6>
 									<!-- <h6 class="col-md-12 col-6 mt-2"><i
 											class="fa fa-chevron-right col_oran me-1 font_13 align-middle"></i> <a
 											class="text-light a_tag disabled highlight-btn" href="special.html"> विशेष अवसर</a></h6> -->
